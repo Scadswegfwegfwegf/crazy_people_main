@@ -1,5 +1,6 @@
+#создай приложение для запоминания информации
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QHBoxLayout, QLabel, QMessageBox, QRadioButton
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QHBoxLayout, QVBoxLayout, QLabel, QMessageBox, QRadioButton
 
 app = QApplication([])
 main_win = QWidget()
@@ -21,18 +22,18 @@ layoutH2.addWidget(btn_answer1, alignment = Qt.AlignCenter)
 layoutH2.addWidget(btn_answer2, alignment = Qt.AlignCenter)
 layoutH3.addWidget(btn_answer3, alignment = Qt.AlignCenter)
 layoutH3.addWidget(btn_answer4, alignment = Qt.AlignCenter)
-
+layout_main = QVBoxLayout()
 layout_main.addLayout(layoutH1)
 layout_main.addLayout(layoutH2)
 layout_main.addLayout(layoutH3)
-main_main.setLayout(layout_main)
+main_win.setLayout(layout_main)
 
 def show_win():
     victory_win = QMessageBox()
     victory_win.setText('Верно!\nВы выиграли гироскутер')
     victory_win.exec_()
 
-def show_win():
+def show_lose():
     victory_win = QMessageBox()
     victory_win.setText('Нет, в 2015\nВы выиграли фирменный плакат')
     victory_win.exec_()
