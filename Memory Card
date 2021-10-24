@@ -28,9 +28,14 @@ layout_ans1.addLayout(layout_ans3)
 
 RadioGroupBox.setLayout(layout_ans1)
 
+AnsGroupBox =  QGroupBox('Результат теста')
+lb_Result = QLabel('прав ты или нет?')
+lb_Correct = QLabel('ответ будет тут!')
 
-
-
+layout_res = QVBoxLayout()
+layout_res.addWidget(lb_Result, alidnment=(Qt.AlignLeft | Qt.AlignTop))
+layout_res.addWidget(lb_Correct, alignment=(Qt.AlignHCenter, stretch=2)
+AnsGroupBox.setLayout(layout_res)
 
 
 
@@ -41,6 +46,8 @@ layout_line3 = QHBoxLayout()
 
 layout_line1.addWidget(lb_Question, alignment=(Qt.AlignVCenter | Qt.AlignHCenter))
 layout_line2.addWidget(RadioGroupBox)
+layout_line2.addWidget(AnsGroupBox)
+AnsGroupBox.hide()
 layout_line3.addStretch(1)
 layout_line3.addWidget(btn_OK, stretch = 3)
 layout_line3.addStretch(1)
